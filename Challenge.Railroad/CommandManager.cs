@@ -13,7 +13,7 @@ namespace Challenge.Railroad
         private readonly Func<Query, IQueryCommand> _funcQueryCommand;
 
         private readonly IDictionary<string, CommandType> _commandTypes;
-        private readonly IDictionary<CommandType, Func<string, ICommand>> _commandParcer;
+        private readonly IDictionary<CommandType, Func<string, ICommand>> _commandParser;
 
         public CommandManager(Func<Route, IRouteCommand> surfaceCommandFunc, Func<Query, IQueryCommand> funcQueryCommand)
         {
@@ -26,7 +26,7 @@ namespace Challenge.Railroad
                 { @"^(QUERY\([A-Z]-[A-Z]\))$", CommandType.QueryCommand }, // (QUERY\([A-Z]-[A-Z]\))
             };
 
-            _commandParcer = new Dictionary<CommandType, Func<string, ICommand>>
+            _commandParser = new Dictionary<CommandType, Func<string, ICommand>>
             {
                 {CommandType.RouteCommand, ParseRouteCommand},
                 {CommandType.QueryCommand, ParseQueryCommand},
@@ -37,16 +37,17 @@ namespace Challenge.Railroad
         public IEnumerable<ICommand> Parse(string commandInput)
         {
             var commands = commandInput.Replace(" ", string.Empty).Split(',');
-            var commandObjects = commands.Select(command => _commandParcer[GetCommandType(command)].Invoke(command)).ToList();
+            var commandObjects = commands.Select(command => _commandParser[GetCommandType(command)].Invoke(command)).ToList();
             return commandObjects;
         }
 
         #region Privates
 
         /// <summary>
-        /// Validates the command input and if it is matches the any command (regex pattern) it returns the command type
+        /// Validates the command input and if it matches any command (regex pattern) it returns the command type
         /// </summary>
         /// <param name="commandInput"></param>
+        /// <exception cref="Exception"></exception>
         /// <returns>
         /// <see cref="CommandType"/>
         /// </returns>
@@ -73,13 +74,13 @@ namespace Challenge.Railroad
         {
             // Sample command input: A-B:5
 
-            var text = commandInput.Split(':');
-            var points = text[0].Split('-');
-            var from = points[0];
-            var to = points[1];
-            var distince = int.Parse(text[1]);
+            var text = commandInput.Split(':'); // A-B, 5
+            var points = text[0].Split('-'); // A, B
+            var from = points[0]; // A
+            var to = points[1]; // B
+            var distance = int.Parse(text[1]); // 5
 
-            var route = new Route(from, to, distince);
+            var route = new Route(from, to, distance);
 
             var command = _funcRouteCommand(route);
             return command;
@@ -95,10 +96,10 @@ namespace Challenge.Railroad
         {
             // Sample command input: QUERY(A-B)
 
-            var text = commandInput.Substring(commandInput.IndexOf('(') + 1, 3);
-            var points = text.Split('-');
-            var from = points[0];
-            var to = points[1];
+            var text = commandInput.Substring(commandInput.IndexOf('(') + 1, 3); // A-B
+            var points = text.Split('-'); // A, B
+            var from = points[0]; // A
+            var to = points[1]; // B
 
             var query = new Query(from, to);
 

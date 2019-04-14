@@ -7,7 +7,7 @@ namespace Challenge.Railroad
 {
     public class CommandInvoker : ICommandInvoker
     {
-        private readonly IDictionary<CommandType, Action<ICommand>> _setReceiver;
+        private readonly IDictionary<CommandType, Action<ICommand>> _setCommandType;
         private readonly IRailroadCompanyReceiver _railroadCompanyReceiver;
         private IEnumerable<ICommand> _commands;
 
@@ -15,7 +15,7 @@ namespace Challenge.Railroad
         {
             _railroadCompanyReceiver = railroadCompanyReceiver;
 
-            _setReceiver = new Dictionary<CommandType, Action<ICommand>>
+            _setCommandType = new Dictionary<CommandType, Action<ICommand>>
             {
                 {CommandType.RouteCommand, SetRouteCommand},
                 {CommandType.QueryCommand, SetQueryCommand}
@@ -46,7 +46,7 @@ namespace Challenge.Railroad
         /// <param name="command"></param>
         private void SetReceiver(ICommand command)
         {
-            _setReceiver[command.GetCommandType()].Invoke(command);
+            _setCommandType[command.GetCommandType()].Invoke(command);
         }
 
         private void SetRouteCommand(ICommand command)
