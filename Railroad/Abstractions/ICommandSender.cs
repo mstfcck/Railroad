@@ -1,4 +1,4 @@
-﻿namespace Challenge.Railroad.Abstractions
+﻿namespace Railroad.Abstractions
 {
     public interface ICommandSender
     {

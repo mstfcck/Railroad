@@ -1,11 +1,11 @@
-﻿using Challenge.Railroad.Abstractions;
-using Challenge.Railroad.Receiver;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+using Railroad.Abstractions;
+using Railroad.Receiver;
 
-namespace Challenge.Railroad
+namespace Railroad
 {
     public class CommandManager : ICommandManager
     {

@@ -1,6 +1,6 @@
-﻿using Challenge.Railroad.Abstractions;
+﻿using Railroad.Abstractions;
 
-namespace Challenge.Railroad
+namespace Railroad
 {
     public class CommandSender : ICommandSender
     {

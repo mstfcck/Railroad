@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.329
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7EDF9F61-E0B1-4657-A606-2B2A84C57649}"
 	ProjectSection(SolutionItems) = preProject
@@ -12,7 +12,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "source", "source", "{A660641C-39F9-4735-A35F-F8B646CC506D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Challenge.Railroad", "Challenge.Railroad\Challenge.Railroad.csproj", "{356AF98E-5723-4D33-BD7A-0C47CA83D88A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Railroad", "Railroad\Railroad.csproj", "{3CECA757-6973-4A82-96B8-26FD01F7EBFF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,16 +20,16 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{356AF98E-5723-4D33-BD7A-0C47CA83D88A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{356AF98E-5723-4D33-BD7A-0C47CA83D88A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{356AF98E-5723-4D33-BD7A-0C47CA83D88A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{356AF98E-5723-4D33-BD7A-0C47CA83D88A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CECA757-6973-4A82-96B8-26FD01F7EBFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CECA757-6973-4A82-96B8-26FD01F7EBFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CECA757-6973-4A82-96B8-26FD01F7EBFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CECA757-6973-4A82-96B8-26FD01F7EBFF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{356AF98E-5723-4D33-BD7A-0C47CA83D88A} = {A660641C-39F9-4735-A35F-F8B646CC506D}
+		{3CECA757-6973-4A82-96B8-26FD01F7EBFF} = {A660641C-39F9-4735-A35F-F8B646CC506D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0AD77B5B-FB29-4301-A67B-5C2762559010}

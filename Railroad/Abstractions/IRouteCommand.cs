@@ -1,6 +1,6 @@
-﻿using Challenge.Railroad.Receiver;
+﻿using Railroad.Receiver;
 
-namespace Challenge.Railroad.Abstractions
+namespace Railroad.Abstractions
 {
     public interface IRouteCommand : ICommand
     {

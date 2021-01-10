@@ -1,4 +1,4 @@
-﻿namespace Challenge.Railroad.Receiver
+﻿namespace Railroad.Receiver
 {
     public class Route
     {

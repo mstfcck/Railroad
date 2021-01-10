@@ -1,16 +1,16 @@
-﻿using Challenge.Railroad.Abstractions;
-using Challenge.Railroad.Receiver;
+﻿using Railroad.Abstractions;
+using Railroad.Receiver;
 
-namespace Challenge.Railroad.Commands
+namespace Railroad.Commands
 {
-    public class RouteCommand : IRouteCommand
+    public class QueryCommand : IQueryCommand
     {
         private IRailroadCompanyReceiver _railroadCompanyReceiver;
-        public Route Route { get; set; }
+        public Query Query { get; set; }
 
-        public RouteCommand(Route route)
+        public QueryCommand(Query query)
         {
-            Route = route;
+            Query = query;
         }
 
         public void SetReceiver(IRailroadCompanyReceiver railroadCompanyReceiver)
@@ -20,15 +20,15 @@ namespace Challenge.Railroad.Commands
 
         public CommandType GetCommandType()
         {
-            return CommandType.RouteCommand;
+            return CommandType.QueryCommand;
         }
 
         /// <summary>
-        /// Adds a route to the receiver
+        /// Runs the query in receiver
         /// </summary>
         public void Execute()
         {
-            _railroadCompanyReceiver.AddRoute(Route);
+            _railroadCompanyReceiver.RunQuery(Query);
         }
     }
 }

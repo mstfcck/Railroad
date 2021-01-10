@@ -1,9 +1,9 @@
-﻿using Autofac;
-using Challenge.Railroad.Abstractions;
-using System;
+﻿using System;
 using System.Reflection;
+using Autofac;
+using Railroad.Abstractions;
 
-namespace Challenge.Railroad
+namespace Railroad
 {
     class Program
     {

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Challenge.Railroad.Abstractions
+namespace Railroad.Abstractions
 {
     public interface ICommandManager
     {

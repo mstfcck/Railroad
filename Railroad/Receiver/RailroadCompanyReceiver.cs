@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Challenge.Railroad.Abstractions;
+using Railroad.Abstractions;
 
-namespace Challenge.Railroad.Receiver
+namespace Railroad.Receiver
 {
     public class RailroadCompanyReceiver : IRailroadCompanyReceiver
     {
